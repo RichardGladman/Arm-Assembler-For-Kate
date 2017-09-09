@@ -62,7 +62,7 @@
 
         <contexts>
             <context name="Base" attribute="Normal Text" lineEndContext="#stay">
-                <RegExpr String= "^[a-zA-Z0-9].*?:" attribute = "Label" context="#stay"/>
+                <RegExpr String= "^[a-zA-Z0-9_].*?:" attribute = "Label" context="#stay"/>
                 <RegExpr String="\$[A-Fa-f0-9]*" attribute="Hex" context="#stay"/>
                 <RegExpr String="[0-9]+?" attribute="Number" context="#stay"/>
                 <keyword attribute="Register" context="#stay" String="registers" />
@@ -77,6 +77,7 @@
                 <RegExpr String= "\.long" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.section" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.text" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\.word" attribute = "Data Type" context="#stay"/>
                 
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 <RegExpr String= "\@.*$" attribute = "Comment" context="#pop"/>
