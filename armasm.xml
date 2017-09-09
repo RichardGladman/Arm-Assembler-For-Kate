@@ -79,7 +79,11 @@
                 
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 <RegExpr String= "\@.*$" attribute = "Comment" context="#pop"/>
+                <Detect2Chars attribute="Comment" context="Comment Type 2" char="/" char1="*" beginRegion="Comment"/>
             </context>
+    			<context attribute="Comment" lineEndContext="#stay" name="Comment Type 2">
+				<Detect2Chars attribute="Comment" context="#pop" char="*" char1="/" endRegion="Comment"/>
+			</context>
             <context attribute="String" lineEndContext="#stay" name="string" >
                 <DetectChar attribute="String" context="#pop" char="&quot;" />
             </context>
