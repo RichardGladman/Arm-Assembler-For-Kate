@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language name="ARM Assembler (Raspi)" version="0.1" kateversion="5.0" section="Assembler" extensions="*.s" mimetype="text/x-asmarm" author="Richard Gladman (git@thefifthcontinent.com)">
+    
+    <highlighting>
+        
+        <list name="datatypes">
+            <item> .bss </item>
+            <item> .data </item>
+            <item> .long </item>
+        </list>
+
+        <list name="keywords">
+            <item> add </item>
+            <item> addeq </item>
+            <item> addge </item>
+            <item> addgt </item>
+            <item> addlt </item>
+            <item> bal </item>
+            <item> beq </item>
+            <item> bge </item>
+            <item> bgt </item>
+            <item> bl </item>
+            <item> ble </item>
+            <item> cmp </item>
+            <item> ldmfd </item>
+            <item> ldr </item>
+            <item> mov </item>
+            <item> stmfd </item>
+            <item> str </item>
+            <item> sub </item>
+            <item> subeq </item>
+            <item> subge </item>
+            <item> subgt </item>
+            <item> sublt </item>
+            <item> subs </item>
+            <item> svc </item>
+        </list>
+        
+        <list name="registers">
+            <item> r0 </item>
+            <item> r1 </item>
+            <item> r2 </item>
+            <item> r3 </item>
+            <item> r4 </item>
+            <item> r5 </item>
+            <item> r6 </item>
+            <item> r7 </item>
+            <item> r8 </item>
+            <item> r8 </item>
+            <item> r10 </item>
+            <item> r11</item>
+            <item> r12 </item>
+            <item> r13 </item>
+            <item> r14 </item>
+            <item> r15 </item>
+            <item> sp </item>
+            <item> pc </item>
+            <item> lr </item>
+        </list>
+
+        <contexts>
+            <context name="Base" attribute="Normal Text" lineEndContext="#stay">
+                <RegExpr String= "^[a-zA-Z0-9].*?:" attribute = "Label" context="#stay"/>
+                <RegExpr String="\$[A-Fa-f0-9]*" attribute="Hex" context="#stay"/>
+                <RegExpr String="[0-9]+?" attribute="Number" context="#stay"/>
+                <keyword attribute="Register" context="#stay" String="registers" />
+                <keyword attribute="Keyword" context="#stay" String="keywords" />
+                
+                <RegExpr String= "\.asciz" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\.balign" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\.bss" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\.data" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\.end" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\.global" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\.long" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\.section" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\.text" attribute = "Data Type" context="#stay"/>
+                
+                <DetectChar attribute="String" context="string" char="&quot;" />
+                <RegExpr String= "\@.*$" attribute = "Comment" context="#pop"/>
+            </context>
+            <context attribute="String" lineEndContext="#stay" name="string" >
+                <DetectChar attribute="String" context="#pop" char="&quot;" />
+            </context>
+        </contexts>
+
+        <itemDatas>
+            <itemData name="Normal Text" defStyleNum="dsNormal" />
+            <itemData name="Keyword" defStyleNum="dsKeyword" />
+            <itemData name="Register" defStyleNum="dsAttribute" />
+            <itemData name="Hex"  defStyleNum="dsBaseN"/>
+            <itemData name="Number"  defStyleNum="dsBaseN"/>
+            <itemData name="String" defStyleNum="dsString" />
+            <itemData name="Comment" defStyleNum="dsComment" />
+            <itemData name="Label" defStyleNum="dsFunction" />
+            <itemData name="Data Type" defStyleNum="dsDataType" />
+        </itemDatas>
+        
+    </highlighting>
+    
+    <general>
+    </general>
+
+</language>
+
