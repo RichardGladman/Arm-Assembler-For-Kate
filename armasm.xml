@@ -11,11 +11,23 @@
             <item> addgt </item>
             <item> addlt </item>
             <item> bal </item>
+            <item> bcc </item>
+            <item> bcs </item>
             <item> beq </item>
             <item> bge </item>
             <item> bgt </item>
+            <item> bhi </item>
+            <item> bhs </item>
             <item> bl </item>
             <item> ble </item>
+            <item> blo </item>
+            <item> bls </item>
+            <item> blt </item>
+            <item> bmi </item>
+            <item> bne </item>
+            <item> bpl </item>
+            <item> bvc </item>
+            <item> bvs </item>
             <item> bx </item>
             <item> cmp </item>
             <item> ldmfd </item>
