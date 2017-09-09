@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "language.dtd">
 <language name="ARM Assembler (Raspi)" version="0.1" kateversion="5.0" section="Assembler" extensions="*.s" mimetype="text/x-asmarm" author="Richard Gladman (git@thefifthcontinent.com)">
-    
+
     <highlighting>
-        
-        <list name="datatypes">
-            <item> .bss </item>
-            <item> .data </item>
-            <item> .long </item>
-        </list>
 
         <list name="keywords">
             <item> add </item>
@@ -37,7 +31,7 @@
             <item> subs </item>
             <item> svc </item>
         </list>
-        
+
         <list name="registers">
             <item> r0 </item>
             <item> r1 </item>
@@ -67,7 +61,7 @@
                 <RegExpr String="[0-9]+?" attribute="Number" context="#stay"/>
                 <keyword attribute="Register" context="#stay" String="registers" />
                 <keyword attribute="Keyword" context="#stay" String="keywords" />
-                
+
                 <RegExpr String= "\.asciz" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.balign" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.bss" attribute = "Data Type" context="#stay"/>
@@ -78,7 +72,7 @@
                 <RegExpr String= "\.section" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.text" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.word" attribute = "Data Type" context="#stay"/>
-                
+
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 <RegExpr String= "\@.*$" attribute = "Comment" context="#pop"/>
                 <Detect2Chars attribute="Comment" context="Comment Type 2" char="/" char1="*" beginRegion="Comment"/>
@@ -102,9 +96,9 @@
             <itemData name="Label" defStyleNum="dsFunction" />
             <itemData name="Data Type" defStyleNum="dsDataType" />
         </itemDatas>
-        
+
     </highlighting>
-    
+
     <general>
     </general>
 
