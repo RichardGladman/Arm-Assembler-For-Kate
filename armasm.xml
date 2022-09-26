@@ -1,15 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "language.dtd">
-<language name="ARM Assembler (Raspi)" version="0.1" kateversion="5.0" section="Assembler" extensions="*.s" mimetype="text/x-asmarm" author="Richard Gladman (git@thefifthcontinent.com)">
+<language name="ARM Assembler" version="0.1" kateversion="5.0" section="Assembler" extensions="*.s" mimetype="text/x-asmarm" author="Richard Gladman (git@thefifthcontinent.com)">
 
     <highlighting>
-
+        
         <list name="keywords">
+            <item> mov </item>
+            <item> movt </item>
+            <item> movw </item>
+            <item> adc </item>
             <item> add </item>
+            <item> adr </item>
             <item> addeq </item>
             <item> addge </item>
             <item> addgt </item>
-            <item> addlt </item>
+            <item> addlt </item> 
+            <item> rsb </item>
+            <item> sub </item>
+            <item> sbc </item>
+            <item> subeq </item>
+            <item> subge </item>
+            <item> subgt </item>
+            <item> sublt </item>
+            <item> subs </item>
+            <item> mul </item>
+            <item> mla </item>
+            <item> mls </item>
+            <item> smull </item>
+            <item> umull </item>
+            <item> smlal </item>
+            <item> umlal </item>
+            <item> sdiv </item>
+            <item> udiv </item>
+            <item> ssat </item>
+            <item> usat </item>
+            <item> cmp </item>
+            <item> cmn </item> 
+            <item> and </item>
+            <item> eor </item>
+            <item> orr </item>
+            <item> orn </item>
+            <item> bic </item>
+            <item> mvn </item>
+            <item> tst </item>
+            <item> teq </item>
+            <item> lsl </item>
+            <item> lsr </item>
+            <item> asr </item> 
+            <item> ror </item>
+            <item> rrx </item>
+            <item> clz </item>
+            <item> ldr </item>
+            <item> ldrh </item>
+            <item> ldrb </item>
+            <item> ldrsh </item>
+            <item> ldrsb </item>
+            <item> ldrt </item>
+            <item> ldrht </item>
+            <item> ldrbt </item>
+            <item> ldrsht </item>
+            <item> ldrd </item>
+            <item> ldm </item>
+            <item> str </item>
+            <item> strh </item>
+            <item> strb </item>
+            <item> strsh </item>
+            <item> strsb </item>
+            <item> strt </item>
+            <item> strht </item>
+            <item> strbt </item>
+            <item> strd </item>
+            <item> stm </item>
+            <item> push </item>
+            <item> pop </item>
+            <item> ldrex </item>
+            <item> ldrexh </item>
+            <item> ldrexb </item>
+            <item> strex </item>
+            <item> strexh </item>
+            <item> strexb </item>
+            <item> clrex </item>
             <item> bal </item>
             <item> bcc </item>
             <item> bcs </item>
@@ -18,7 +88,6 @@
             <item> bgt </item>
             <item> bhi </item>
             <item> bhs </item>
-            <item> bl </item>
             <item> ble </item>
             <item> blo </item>
             <item> bls </item>
@@ -28,20 +97,52 @@
             <item> bpl </item>
             <item> bvc </item>
             <item> bvs </item>
+            <item> b </item>
+            <item> bl </item>
             <item> bx </item>
-            <item> cmp </item>
-            <item> ldmfd </item>
-            <item> ldr </item>
-            <item> mov </item>
-            <item> stmfd </item>
-            <item> str </item>
-            <item> sub </item>
-            <item> subeq </item>
-            <item> subge </item>
-            <item> subgt </item>
-            <item> sublt </item>
-            <item> subs </item>
+            <item> blx </item>
+            <item> cbz </item>
+            <item> cbnz </item>
+            <item> tbb </item>
+            <item> tbh </item>
             <item> svc </item>
+            <item> it </item>
+            <item> cpsid </item>
+            <item> cpsie </item>
+            <item> mrs </item>
+            <item> msr </item>
+            <item> bkpt </item>
+            <item> sxth </item>
+            <item> sxtb </item>
+            <item> uxth </item>
+            <item> uxtb </item>
+            <item> ubfx </item>
+            <item> sbfx </item>
+            <item> bfc </item>
+            <item> bfi </item>
+            <item> rev </item>
+            <item> rev16 </item>
+            <item> revsh </item>
+            <item> rbit </item>
+            <item> sev </item>
+            <item> wfe </item>
+            <item> wfi </item>
+            <item> nop </item>
+            <item> isb </item>
+            <item> dmb </item>
+            <item> dsb </item>
+            <item> ldmfd </item>
+            <item> stmfd </item>
+            
+            <item> PUSH </item>
+            <item> LDR </item>
+            <item> STR </item>
+            <item> SUB </item>
+            <item> ORR </item>
+            <item> POP </item>
+            <item> CMP </item>
+            <item> IT </item>
+            <item> SUBGT </item>
         </list>
 
         <list name="registers">
@@ -54,7 +155,7 @@
             <item> r6 </item>
             <item> r7 </item>
             <item> r8 </item>
-            <item> r8 </item>
+            <item> r9 </item>
             <item> r10 </item>
             <item> r11</item>
             <item> r12 </item>
@@ -64,6 +165,25 @@
             <item> sp </item>
             <item> pc </item>
             <item> lr </item>
+            <item> R0 </item>
+            <item> R1 </item>
+            <item> R2 </item>
+            <item> R3 </item>
+            <item> R4 </item>
+            <item> R5 </item>
+            <item> R6 </item>
+            <item> R7 </item>
+            <item> R8 </item>
+            <item> R9 </item>
+            <item> R10 </item>
+            <item> R11</item>
+            <item> R12 </item>
+            <item> R13 </item>
+            <item> R14 </item>
+            <item> R15 </item>
+            <item> SP </item>
+            <item> PC </item>
+            <item> LR </item>
         </list>
 
         <contexts>
@@ -81,9 +201,18 @@
                 <RegExpr String= "\.end" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.global" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.long" attribute = "Data Type" context="#stay"/>
-                <RegExpr String= "\.section" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.text" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.word" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\%function" attribute = "Data Type" context="#stay"/>
+                <RegExpr String= "\=" attribute = "Constant" context="#stay"/>
+                
+                <RegExpr String= "\.syntax" attribute = "Preprocessor" context="#stay"/>
+                <RegExpr String= "\.cpu" attribute = "Preprocessor" context="#stay"/>
+                <RegExpr String= "\.fpu" attribute = "Preprocessor" context="#stay"/>
+                <RegExpr String= "\.thumb" attribute = "Preprocessor" context="#stay"/>
+                <RegExpr String= "\.include" attribute = "Preprocessor" context="#stay"/>
+                <RegExpr String= "\.type" attribute = "Preprocessor" context="#stay"/>
+                <RegExpr String= "\.section" attribute = "Preprocessor" context="#stay"/>
 
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 <RegExpr String= "\@.*$" attribute = "Comment" context="#pop"/>
@@ -103,10 +232,12 @@
             <itemData name="Register" defStyleNum="dsAttribute" />
             <itemData name="Hex"  defStyleNum="dsBaseN"/>
             <itemData name="Number"  defStyleNum="dsBaseN"/>
+            <itemData name="Constant"  defStyleNum="dsConstant"/>
             <itemData name="String" defStyleNum="dsString" />
             <itemData name="Comment" defStyleNum="dsComment" />
             <itemData name="Label" defStyleNum="dsFunction" />
             <itemData name="Data Type" defStyleNum="dsDataType" />
+            <itemData name="Preprocessor" defStyleNum="dsPreprocessor" />
         </itemDatas>
 
     </highlighting>
