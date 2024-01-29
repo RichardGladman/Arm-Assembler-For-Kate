@@ -196,6 +196,7 @@
 
                 <RegExpr String= "\.asciz" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.balign" attribute = "Data Type" context="#stay"/>
+		<RegExpr String= "//.*$" attribute="Comment" context="#stay"/>
                 <RegExpr String= "\.bss" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.data" attribute = "Data Type" context="#stay"/>
                 <RegExpr String= "\.end" attribute = "Data Type" context="#stay"/>
